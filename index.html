@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Canzoniere — 10 Parole</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Vista: Indice -->
+  <div id="view-index" class="view">
+    <header class="header">
+      <h1 class="site-title">Canti</h1>
+      <div class="search-wrapper">
+        <input
+          type="text"
+          id="search-input"
+          class="search-input"
+          placeholder="Cerca una canzone..."
+          autocomplete="off"
+          aria-label="Cerca canzone"
+          aria-autocomplete="list"
+          aria-controls="autocomplete-list"
+        >
+        <button class="search-clear" id="search-clear" aria-label="Cancella ricerca" hidden>&#x2715;</button>
+        <ul id="autocomplete-list" class="autocomplete-list" role="listbox" hidden></ul>
+      </div>
+    </header>
+
+    <main class="song-list-container">
+      <ol id="song-list" class="song-list"></ol>
+      <p id="no-results" class="no-results" hidden>Nessun risultato.</p>
+    </main>
+  </div>
+
+  <!-- Vista: Testo canzone -->
+  <div id="view-song" class="view" hidden>
+    <header class="song-header">
+      <button id="back-btn" class="back-btn" aria-label="Torna all'indice">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+        Indice
+      </button>
+      <h2 id="song-title" class="song-title"></h2>
+    </header>
+    <main class="song-content">
+      <pre id="song-lyrics" class="song-lyrics"></pre>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
