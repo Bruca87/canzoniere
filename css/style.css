@@ -253,7 +253,7 @@ body {
 }
 
 .song-lyrics {
-  font-family: var(--font-mono);
+  font-family: var(--font-sans);
   font-size: 1.05rem;
   line-height: 1.75;
   color: var(--color-text);
