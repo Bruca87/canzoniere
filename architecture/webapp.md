@@ -37,3 +37,12 @@ Navigazione via `window.location.hash` — funziona su GitHub Pages senza server
 2. Indice in memoria come array `songs[]`
 3. Ricerca: `songs.filter(s => s.title.toLowerCase().includes(query))`
 4. Render: manipolazione DOM diretta, no virtual DOM
+
+## Formattazione testo (ritornello in grassetto)
+Il campo `lyrics` usa marcatori `**...**` per le righe di ritornello.
+Il renderer le converte in `<strong>` nel DOM:
+- Riga normale → testo semplice
+- Riga `**testo**` → `<strong>testo</strong>`
+- Riga vuota → separatore di strofa
+
+L'estrazione dal PDF usa il font `Lexend-Bold` per rilevare le righe di ritornello.

@@ -20,7 +20,7 @@
 | id     | intero  | si           | progressivo univoco |
 | title  | stringa | si           | usato per ricerca e visualizzazione |
 | slug   | stringa | si           | URL-safe: lowercase, spazi → trattini |
-| lyrics | stringa | si           | `\n` per a capo, `\n\n` per separare strofe |
+| lyrics | stringa | si           | `\n` per a capo, `\n\n` per separare strofe, `**testo**` per righe di ritornello (grassetto) |
 
 ## Campi futuri (non breaking)
 
@@ -42,3 +42,4 @@
 3. Usa `id` progressivo rispetto all'ultimo
 4. Genera lo slug dal titolo seguendo le regole sopra
 5. Inserisci il testo in `lyrics` usando `\n` per gli a capo
+6. Per le righe di ritornello usa il formato `**riga del ritornello**`

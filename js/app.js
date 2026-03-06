@@ -188,11 +188,35 @@
     window.scrollTo(0, 0);
   }
 
+  function renderLyrics(lyrics) {
+    songLyrics.innerHTML = "";
+    const lines = lyrics.split("\n");
+    lines.forEach((line, i) => {
+      if (line === "") {
+        songLyrics.appendChild(document.createElement("br"));
+      } else {
+        const match = line.match(/^\*\*(.+)\*\*$/);
+        const el = document.createElement("span");
+        if (match) {
+          const strong = document.createElement("strong");
+          strong.textContent = match[1];
+          el.appendChild(strong);
+        } else {
+          el.textContent = line;
+        }
+        songLyrics.appendChild(el);
+        if (i < lines.length - 1) {
+          songLyrics.appendChild(document.createTextNode("\n"));
+        }
+      }
+    });
+  }
+
   function showSong(song) {
     viewIndex.hidden = true;
     viewSong.hidden = false;
     songTitle.textContent = song.title;
-    songLyrics.textContent = song.lyrics;
+    renderLyrics(song.lyrics);
     window.scrollTo(0, 0);
   }
 
